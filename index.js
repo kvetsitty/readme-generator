@@ -6,19 +6,46 @@ const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
     {
-        name: 'project',
+        name: 'title',
         type: 'input',
-        message: 'What is the name of your project?' 
+        message: 'What is the name of your project? (Required)',
+        
+        validate: (nameInput) => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter your project name.");
+                return false;
+            }
+        }
     },
     {
         name: 'description',
         type: 'input',
-        message: 'Please add a description of your project:'
+        message: 'Please add a description of your project:',
+
+        validate: (nameInput) => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter your project name.");
+                return false;
+            }
+        }
     },
     {
         name: 'installation',
         type: 'input',
-        message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.'
+        message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
+    
+        validate: (nameInput) => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please list your installation instructions.");
+                return false;
+            }
+        }
     },
     {
         name: 'license',
@@ -44,8 +71,17 @@ const questions = [
     {
         name: 'questions',
         type: 'input',
-        message: 'Give instructions on how to contact you for further questions. (GitHub username and email).'
-    }
+        message: 'Please provide your Github username and email address with instructions on how to contact you for further questions. (Required)',
+
+        validate: (nameInput) => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter your Github username and email.");
+                return false;
+            }
+        }
+    },
 ];
 
 // TODO: Create a function to write README file
@@ -56,8 +92,8 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then(answers => {
-        console.log(answers)
         writeToFile('README.md', generateMarkdown(answers));
+        console.log("Thank you! Please see your local README.md file to see your completed data.")
     })
 }
 
