@@ -1,20 +1,13 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  let temp = ''; 
-  switch(license) {
-    case 'Apache 2.0': 
-      temp+=('[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)') 
-      break;
-    case 'Boost Software 1.0':
-      temp+=('[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)')
-      break;
-    case 'BSD 3-Clause':
-      temp+=('[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)')
-      break;
-    default:
+  if (license !== "no license") {
+    return `
+    ![badge](https://img.shields.io/badge/license-${license}-blue)
+    `;
+  } else {
+    return " ";
   }
-  return temp;
 }
 
 // TODO: Create a function that returns the license link
@@ -43,7 +36,8 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
+
+${renderLicenseBadge(data.license)}
 
 ## Table-of-Contents
 * [Description](#description)
@@ -54,25 +48,25 @@ function generateMarkdown(data) {
 * [Tests](#tests)
 * [Questions](#questions)
 
-## [Description] (#table-of-contents) 
+## [Description](#table-of-contents) 
 ${data.description}
 
-## [Installation] (#table-of-contents) 
+## [Installation](#table-of-contents) 
 ${data.installation}
 
-## [License] (#table-of-contents) 
+## [License](#table-of-contents) 
 ${renderLicenseSection(data.license)}
 
-## [Usage] (#table-of-contents) 
+## [Usage](#table-of-contents) 
 ${data.usage}
 
-## [Contributing] (#table-of-contents) 
+## [Contributing](#table-of-contents) 
 ${data.contribution}
 
-## [Tests] (#table-of-contents) 
+## [Tests](#table-of-contents) 
 ${data.tests}
 
-## [Questions] (#table-of-contents) 
+## [Questions](#table-of-contents) 
 ${data.questions}
 `;
 }
