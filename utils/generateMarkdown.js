@@ -54,19 +54,26 @@ function generateMarkdown(data) {
 * [Tests](#tests)
 * [Questions](#questions)
 
-## [Description] (#table-of-contents) ${data.description}
+## [Description] (#table-of-contents) 
+${data.description}
 
-## [Installation] (#table-of-contents) ${data.installation}
+## [Installation] (#table-of-contents) 
+${data.installation}
 
-## [License] (#table-of-contents) ${renderLicenseSection(data.license)}
+## [License] (#table-of-contents) 
+${renderLicenseSection(data.license)}
 
-## [Usage] (#table-of-contents) ${data.usage}
+## [Usage] (#table-of-contents) 
+${data.usage}
 
-## [Contributing] (#table-of-contents) ${data.contribution}
+## [Contributing] (#table-of-contents) 
+${data.contribution}
 
-## [Tests] (#table-of-contents) ${data.tests}
+## [Tests] (#table-of-contents) 
+${data.tests}
 
-## [Questions] (#table-of-contents) ${data.questions}
+## [Questions] (#table-of-contents) 
+${data.questions}
 `;
 }
 
