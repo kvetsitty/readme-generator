@@ -3,10 +3,18 @@
 function renderLicenseBadge(license) {
   let temp = ''; 
   switch(license) {
-    case '': 
-      temp+=('[![License: ](https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>)]') 
+    case 'Apache 2.0': 
+      temp+=('[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)') 
       break;
+    case 'Boost Software 1.0':
+      temp+=('[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)')
+      break;
+    case 'BSD 3-Clause':
+      temp+=('[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)')
+      break;
+    default:
   }
+  return temp;
 }
 
 // TODO: Create a function that returns the license link

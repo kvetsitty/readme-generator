@@ -24,7 +24,7 @@ const questions = [
         name: 'license',
         type: 'checkbox',
         message: 'Would you like to use any of the badges below for your README file?',
-        choices: ['L1', 'L2', 'L3', 'L4', 'L5']
+        choices: ['Apache 2.0', 'Boost Software 1.0', 'BSD 3-Clause']
     },
     {
         name: 'usage',
